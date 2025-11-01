@@ -1,6 +1,7 @@
 package org.example.service;
 
 import org.example.model.Task;
+import org.example.model.TaskPriority;
 import org.example.model.User;
 import org.example.repository.TaskRepository;
 import org.example.repository.UserRepository;
@@ -32,6 +33,8 @@ public class TaskServiceImpl implements TaskService {
     
     @Override
     public Task createTask(Task task) {
+
+        Task task1 = new TaskBuilder().withTaskPriority(TaskPriority.HIGH).Withtile("32").build();
         // If task has a user, make sure it's a managed entity from database
         if (task.getUser() != null && task.getUser().getId() != null) {
             Optional<User> user = userRepository.findById(task.getUser().getId());
@@ -48,6 +51,8 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public Task updateTask(Task task) {
         // If task has a user, make sure it's a managed entity from database
+
+
         if (task.getUser() != null && task.getUser().getId() != null) {
             Optional<User> user = userRepository.findById(task.getUser().getId());
             if (user.isPresent()) {
@@ -64,5 +69,7 @@ public class TaskServiceImpl implements TaskService {
     public void deleteTask(Long id) {
         taskRepository.deleteById(id);
     }
+
+
 }
 
