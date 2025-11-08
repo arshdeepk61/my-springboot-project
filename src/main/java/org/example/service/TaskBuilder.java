@@ -66,6 +66,13 @@ private Task currenttask;
     }
 
     public Task getCurrenttask() {
+
         return currenttask;
+    }
+
+    public String  getCurrentstate() {
+
+        String ab = "Builder instance "+this.hashCode()+" , "+this.currenttask.getTitle();
+                return ab;
     }
 }

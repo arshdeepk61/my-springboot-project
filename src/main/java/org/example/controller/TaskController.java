@@ -1,12 +1,17 @@
 package org.example.controller;
 
+
 import org.example.model.Task;
+import org.example.model.User;
+import org.example.service.TaskBuilder;
 import org.example.service.TaskService;
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -15,9 +20,12 @@ import java.util.Optional;
 public class TaskController {
 
     private final TaskService taskService;
-    
-    public TaskController(TaskService taskService) {
+
+    private final BeanFactory beanFactory;
+
+    public TaskController(TaskService taskService, BeanFactory beanFactory) {
         this.taskService = taskService;
+        this.beanFactory = beanFactory;
     }
     
     // GET /api/tasks - Get all tasks
@@ -30,6 +38,7 @@ public class TaskController {
     // GET /api/tasks/{id} - Get task by ID
     @GetMapping("/{id}")
     public ResponseEntity<Task> getTaskById(@PathVariable Long id) {
+
         Optional<Task> task = taskService.getTaskById(id);
         return task.map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
@@ -37,10 +46,32 @@ public class TaskController {
     
     // POST /api/tasks - Create new task
     @PostMapping
-    public ResponseEntity<?> createTask(@RequestBody Task task) {
+    public ResponseEntity<?> createTask(@RequestBody Map<String,Object> taskData) {
         try {
-            Task createdTask = taskService.createTask(task);
+            TaskBuilder taskBuilder =beanFactory.getBean(TaskBuilder.class);
+
+            if(taskData.containsKey("title"))
+            {
+                taskBuilder.Withtile((String) taskData.get("title")) ;
+            }
+            if(taskData.containsKey("User"))
+            {
+                Object user = taskData.get("User");
+
+                User ab =null;
+                if(user instanceof User)
+                {
+                    ab   = (User) user;
+                }
+
+                taskBuilder.withUser(ab);
+            }
+            Task createdTask = taskService.createTask(taskBuilder.build());
             return ResponseEntity.status(HttpStatus.CREATED).body(createdTask);
+        }
+        catch(IllegalArgumentException ex)
+        {
+            return ResponseEntity.badRequest().body("Error creating task: " + ex.getMessage());
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Error creating task: " + e.getMessage());
         }
@@ -63,9 +94,9 @@ public class TaskController {
     public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
         Optional<Task> existingTask = taskService.getTaskById(id);
         if (existingTask.isPresent()) {
-            taskService.deleteTask(id);
-            return ResponseEntity.noContent().build();
+
         }
-        return ResponseEntity.notFound().build();
+        taskService.deleteTask(id);
+        return ResponseEntity.noContent().build();
     }
 }
