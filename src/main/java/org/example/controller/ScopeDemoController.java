@@ -1,11 +1,15 @@
 package org.example.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
+import org.example.exception.ErrorResponse;
 import org.example.exception.ResourceNotFoundException;
+import org.example.exception.TaskControllerException;
 import org.example.model.Task;
 import org.example.service.TaskBuilder;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.bind.DefaultValue;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,10 +52,14 @@ public class ScopeDemoController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/throwNotexcpetion")
-    public ResponseEntity<?> throwNotexcpetion(@RequestParam(defaultValue="task") String Resource, @RequestParam(defaultValue = "999") String ID) {
+    @GetMapping("/throwNotException")
+    public ResponseEntity<?> throwNotException(
+            @RequestParam(defaultValue="task") String resource,
+            @RequestParam(defaultValue = "999") String id) {
 
-        throw new ResourceNotFoundException(Resource,ID);
+        throw new ResourceNotFoundException(resource, id);
+    }
 
-       }
+
+
 }

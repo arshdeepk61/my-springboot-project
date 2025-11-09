@@ -1,6 +1,10 @@
 package org.example.controller;
 
 
+import jakarta.servlet.http.HttpServletRequest;
+import org.example.exception.ErrorResponse;
+import org.example.exception.ResourceNotFoundException;
+import org.example.exception.TaskControllerException;
 import org.example.model.Task;
 import org.example.model.User;
 import org.example.service.TaskBuilder;
@@ -93,10 +97,21 @@ public class TaskController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
         Optional<Task> existingTask = taskService.getTaskById(id);
-        if (existingTask.isPresent()) {
+        throw new ResourceNotFoundException("ab","ab1");
+//        if (existingTask.isPresent()) {
+//            throw new TaskControllerException("ab","ab1");
+//        }
+        //taskService.deleteTask(id);
+   //     return ResponseEntity.noContent().build();
+    }
 
-        }
-        taskService.deleteTask(id);
-        return ResponseEntity.noContent().build();
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<ErrorResponse> ValidationExceptionTaskLevel(ResourceNotFoundException exception, HttpServletRequest request)
+
+    {
+
+        ErrorResponse response =new ErrorResponse(HttpStatus.NOT_FOUND.value(),"Task not found:",exception.getMessage(),"api/path");
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND.value()).body(response);
     }
 }
