@@ -1,6 +1,8 @@
 org\example\exception\GlobalExceptionHandler.class
+org\example\exception\GlobalExceptionHandlerMethodNotAllowed.class
 org\example\service\TaskServiceImpl.class
-org\example\exception\GlobalExceptionHandler2.class
+org\example\aspect\CustomerAnnotationAspect.class
+org\example\aspect\PerformanceAspect.class
 org\example\exception\ErrorResponse.class
 org\example\exception\ValidationException.class
 org\example\config\DatabaseConfig.class
@@ -11,9 +13,12 @@ org\example\repository\UserRepository.class
 org\example\service\TaskBuilder.class
 org\example\exception\TaskControllerException.class
 org\example\Main.class
+org\example\aspect\ControllerLoggingAspect.class
+org\example\aspect\LoggingAspectService.class
 org\example\service\UserService.class
 org\example\controller\TaskController.class
 org\example\model\User.class
+org\example\aspect\LogExecution.class
 org\example\exception\ResourceNotFoundException.class
 org\example\service\TaskService.class
 org\example\controller\UserController.class

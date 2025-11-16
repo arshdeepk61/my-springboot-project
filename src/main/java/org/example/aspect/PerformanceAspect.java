@@ -13,9 +13,11 @@ public class PerformanceAspect {
     private static final Logger log = LoggerFactory.getLogger(PerformanceAspect.class);
 
     // 🔹 Pointcut: monitor all methods in controller, service, and repository packages
-    @Pointcut("execution(* org.example.controller..*(..)) || " +
-            "execution(* org.example.service..*(..)) || " +
-            "execution(* org.example.repository..*(..))")
+//    @Pointcut("execution(* org.example.controller..*(..)) || " +
+//            "execution(* org.example.service..*(..)) || " +
+//            "execution(* org.example.repository..*(..))")
+
+    @Pointcut("execution(* org.example.controller..*(..))")
     public void applicationPackages() {}
         @Before("applicationPackages()")
     public void logBefore(JoinPoint joinPoint) {
@@ -34,7 +36,7 @@ public class PerformanceAspect {
     @Around("applicationPackages()")
     public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
-
+        log.info("Around start");
         Object result;
         try {
             result = joinPoint.proceed();
