@@ -2,6 +2,7 @@ org\example\exception\GlobalExceptionHandler.class
 org\example\exception\GlobalExceptionHandlerMethodNotAllowed.class
 org\example\service\TaskServiceImpl.class
 org\example\aspect\CustomerAnnotationAspect.class
+org\example\controller\UserAuthController.class
 org\example\aspect\PerformanceAspect.class
 org\example\exception\ErrorResponse.class
 org\example\exception\ValidationException.class
@@ -24,4 +25,7 @@ org\example\service\TaskService.class
 org\example\controller\UserController.class
 org\example\model\TaskStatus.class
 org\example\service\UserServiceImpl.class
+org\example\health\H2databasehealthindicator.class
 org\example\model\TaskPriority.class
+org\example\controller\SecuirtyDemoController.class
+org\example\config\SecurityConfig.class

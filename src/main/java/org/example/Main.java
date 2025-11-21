@@ -1,11 +1,8 @@
 package org.example;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.actuate.autoconfigure.audit.AuditEventsEndpointAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-
-
 
 @SpringBootApplication
 @EnableAspectJAutoProxy
