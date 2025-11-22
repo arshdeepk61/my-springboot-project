@@ -1,4 +1,6 @@
+C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\config\SecurityConfigouth2.java
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\model\TaskStatus.java
+C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\DTO\AuthenticationResponse.java
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\model\Task.java
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\model\TaskPriority.java
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\health\H2databasehealthindicator.java
@@ -12,13 +14,18 @@ C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\jav
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\aspect\LogExecution.java
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\controller\SecuirtyDemoController.java
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\Main.java
+C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\controller\JwtAuthController.java
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\service\TaskBuilder.java
+C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\service\JwtService.java
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\aspect\CustomerAnnotationAspect.java
+C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\config\JwtTokenSecurityConfig.java
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\controller\TaskController.java
+C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\config\JwtAuthenticationFilter.java
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\service\UserService.java
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\repository\TaskRepository.java
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\controller\UserAuthController.java
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\exception\TaskControllerException.java
+C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\repository\UserDetailServiceRepo.java
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\aspect\LoggingAspectService.java
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\controller\UserController.java
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\exception\ErrorResponse.java
@@ -29,3 +36,4 @@ C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\jav
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\aspect\ControllerLoggingAspect.java
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\controller\ScopeDemoController.java
 C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\model\User.java
+C:\Users\arshd\Downloads\food-delivery-system-full\Task-Tracker-App\src\main\java\org\example\DTO\AuthenticationRequest.java

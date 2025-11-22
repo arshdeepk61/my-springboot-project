@@ -32,4 +32,12 @@ public class SecuirtyDemoController {
         profile.put("Message","you are authenticated");
         return ResponseEntity.ok(profile);
     }
+
+    @GetMapping("/public/oautherror")
+    public ResponseEntity<Map<String,Object>> getPublicError() {
+        Map<String,Object> response = new HashMap<>();
+        response.put("Message","auth 2 login failure");
+        response.put("Status","Error");
+        return ResponseEntity.badRequest().body(response);
+    }
 }

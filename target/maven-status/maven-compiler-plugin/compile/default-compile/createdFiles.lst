@@ -1,6 +1,7 @@
 org\example\exception\GlobalExceptionHandler.class
 org\example\exception\GlobalExceptionHandlerMethodNotAllowed.class
 org\example\service\TaskServiceImpl.class
+org\example\controller\JwtAuthController.class
 org\example\aspect\CustomerAnnotationAspect.class
 org\example\controller\UserAuthController.class
 org\example\aspect\PerformanceAspect.class
@@ -16,11 +17,16 @@ org\example\exception\TaskControllerException.class
 org\example\Main.class
 org\example\aspect\ControllerLoggingAspect.class
 org\example\aspect\LoggingAspectService.class
+org\example\repository\UserDetailServiceRepo.class
+org\example\service\JwtService.class
 org\example\service\UserService.class
+org\example\DTO\AuthenticationResponse.class
 org\example\controller\TaskController.class
 org\example\model\User.class
 org\example\aspect\LogExecution.class
+org\example\config\JwtAuthenticationFilter.class
 org\example\exception\ResourceNotFoundException.class
+org\example\DTO\AuthenticationRequest.class
 org\example\service\TaskService.class
 org\example\controller\UserController.class
 org\example\model\TaskStatus.class
@@ -28,4 +34,4 @@ org\example\service\UserServiceImpl.class
 org\example\health\H2databasehealthindicator.class
 org\example\model\TaskPriority.class
 org\example\controller\SecuirtyDemoController.class
-org\example\config\SecurityConfig.class
+org\example\config\JwtTokenSecurityConfig.class
